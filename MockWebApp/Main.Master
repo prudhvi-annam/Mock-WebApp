@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="MockWebApp.Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="~/wwwroot/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/wwwroot/css/web.default.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="bg-dark">
+            <div class="container">
+                <div class="d-flex flex-column flex-md-row align-items-center p-2 px-md-4 text-white">
+                    <h5 class="my-0 mr-md-auto font-weight-normal">Mock WebApp</h5>
+                    <nav class="my-2 my-md-0 mr-md-3">
+                        <asp:HyperLink runat="server" CssClass="p-2 text-white" NavigateUrl="~/Default.aspx" Text="Home"></asp:HyperLink>
+                        <asp:HyperLink runat="server" CssClass="p-2 text-white" NavigateUrl="~/Feeds.aspx" Text="Feeds"></asp:HyperLink>
+                    </nav>
+                    <asp:HyperLink runat="server" ID="Link_Login" CssClass="btn btn-outline-light" NavigateUrl="~/Account/Login.aspx" Text="Login"></asp:HyperLink>
+                    <asp:Button runat="server" Text="Logout" ID="Button_Logout" CssClass="btn btn-link text-white" OnClick="Button_Logout_Click" />
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-2">
+
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder_Main" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+        </div>
+
+
+        <script type="text/javascript" src='<%=ResolveUrl("~/wwwroot/js/jquery-3.6.0.min.js")%>'></script>
+        <script type="text/javascript" src='<%=ResolveUrl("~/wwwroot/js/popper.min.js")%>'></script>
+        <script type="text/javascript" src='<%=ResolveUrl("~/wwwroot/js/bootstrap.min.js")%>'></script>
+        <script type="text/javascript" src='<%=ResolveUrl("~/wwwroot/js/web.default.js")%>'></script>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder_Scripts" runat="server">
+        </asp:ContentPlaceHolder>        
+    </form>  
+</body>
+</html>
